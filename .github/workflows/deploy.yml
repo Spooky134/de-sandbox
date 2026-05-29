@@ -1,0 +1,17 @@
+name: Deploy DAGs to Local Airflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+
+      - name: Copy DAGs to Airflow folder
+        run: |
+          cp -r dags/* /Users/andreychvankov/Projects/airflow/dags/
