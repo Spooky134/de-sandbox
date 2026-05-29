@@ -19,13 +19,13 @@ jobs:
         with:
           enable-cache: true # Включаем кеширование для максимальной скорости
 
-      # 3. Устанавливаем зависимости из pyproject.toml во временное виртуальное окружение
+      # 3. Устанавливаем зависимости из pyproject.toml ПЛЮС группу test
       - name: Install dependencies
         run: |
           uv venv
-          uv sync
+          uv sync --group test
 
-      # 4. Запускаем тесты через uv внутри созданного виртуального окружения
+      # 4. Запускаем тестов с явным указанием группы
       - name: Run Pytest
         run: |
-          uv run pytest tests/
+          uv run --group test pytest tests/
