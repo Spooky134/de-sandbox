@@ -3,7 +3,7 @@ name: Deploy DAGs to Local Airflow
 on:
   push:
     branches:
-      - main
+      - main  # Срабатывает только когда ветка feat/* успешно влилась в main
 
 jobs:
   deploy:
