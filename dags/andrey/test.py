@@ -27,9 +27,17 @@ def sandbox_test_dag():
         print(result)
         print("=" * 40)
 
+    @task
+    def load_data(result: str):
+        # Выводим финальный результат в логи
+        print("=" * 40)
+        print(result)
+        print("=" * 40)
+
     # Выстраиваем цепочку зависимостей (данные передаются из таски в таску)
     raw_data = extract_data()
     transformed_msg = transform_data(raw_data)
+    load_data(transformed_msg)
     load_data(transformed_msg)
 
 # Инициализируем DAG
