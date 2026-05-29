@@ -32,6 +32,8 @@ def sandbox_test_dag():
     transformed_msg = transform_data(raw_data)
     load_data(transformed_msg)
     load_data(transformed_msg)
+    load_data(transformed_msg)
+
 
 # Инициализируем DAG
 sandbox_test_dag()
