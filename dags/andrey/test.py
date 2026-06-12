@@ -17,7 +17,7 @@ def sandbox_test_dag():
     @task
     def transform_data(data: dict):
         # Преобразуем данные в строку
-        info_str = f"Проект {data['project']} на Airflow {data['version']} работает!"
+        info_str = f"Проект {data['project']} на Airflow {data['version']} работает! Spooky"
         return info_str.upper()
 
     @task
