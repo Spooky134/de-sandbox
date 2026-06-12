@@ -14,4 +14,4 @@ jobs:
 
       - name: Copy DAGs to Airflow folder
         run: |
-          cp -r dags/* /Users/andreychvankov/Projects/airflow/dags/
+          cp -r dags/* /home/andreychvankov/airflow/dags/
